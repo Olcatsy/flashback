@@ -234,3 +234,172 @@ html {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+html {
+  font-size: 62.5%;
+  /* 10px */
+}
+
+body {
+  font-size: 2rem;
+  position: relative;
+  background-color: #5F3CBA;
+  color: #FCFCFC;
+  font-family: "Anonymous Pro", monospace;
+}
+
+/* STRIPPING STYLES */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.startScreen {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#5F3CBA));
+  background-image: linear-gradient(#540187, #5F3CBA);
+  height: 100vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.startScreen .header {
+  font-family: "Sarpanch", sans-serif;
+  font-size: calc(70px + 280 * ( (100vw - 420px) / 1480));
+  color: #D31B65;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 420px) {
+  .startScreen .header {
+    font-size: 70px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .startScreen .header {
+    font-size: 350px;
+  }
+}
+
+.startScreen .startPrompt {
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+}
+
+.gameScreen {
+  display: none;
+}
+
+.gameScreen .wrapper {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.completeScreen {
+  display: none;
+}
+
+.footer {
+  background-color: #5F3CBA;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: default;
+          flex-direction: default;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .footerButton {
+  font-family: "Anonymous Pro", monospace;
+  background-color: #FD7C20;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FD7C20), to(#D31B65));
+  background-image: linear-gradient(to right, #FD7C20, #D31B65);
+  color: #FCFCFC;
+  padding: 5px 40px;
+  border-radius: 20px;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.footer .infoBox {
+  display: none;
+}
+
+.footer .socialLinks ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.footer .socialLinks a {
+  padding: 10px;
+  background-color: #3CB87A;
+  margin: 10px;
+  border-radius: 50%;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}

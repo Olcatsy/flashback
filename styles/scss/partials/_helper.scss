@@ -1,0 +1,39 @@
+
+
+// COLORS
+$primary: #5F3CBA;
+$secondary: #D31B65;
+$accent: #FD7C20;
+$bgGradientOne: #540187;
+$bgGradientTwo: #B600A6;
+$overlay: #396CD9;
+$socialButtons: #3CB87A;
+$pairCounter: #50C2DA;
+$white: #FCFCFC; 
+$black:#232323;
+
+// FONT STACKS
+$bodyFont: "Anonymous Pro", monospace;
+$headerFont: "Sarpanch", sans-serif;
+
+$dropShadow: drop-shadow(3px 3px 2px $black);
+
+// FLUID TYPE - from https://codepen.io/dbox/pen/meaMba
+@mixin fluid-type($min-font-size: 70px, $max-font-size: 350px, $lower-range: 420px, $upper-range: 1900px) {
+
+  font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+  
+  @media screen and (max-width: $lower-range) {
+    font-size: $min-font-size;
+  }
+  @media screen and (min-width: $upper-range){
+    font-size: $max-font-size;
+  }
+}
+
+@mixin flex($flexDirection: initial, $justifyContent: initial, $alignItems: initial ) {
+    display: flex;
+    flex-direction: $flexDirection;
+    justify-content: $justifyContent;
+    align-items: $alignItems;
+}

@@ -1,0 +1,142 @@
+html {
+    font-size: 62.5%; /* 10px */
+}
+
+body {
+    font-size: 2rem;
+    position: relative;
+    background-color: $primary;
+    color: $white;
+    font-family: $bodyFont;
+}
+
+
+/* STRIPPING STYLES */
+body, 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+// END OF STRIPPING STYLES
+
+
+
+// COMMON STYLES
+// END OF COMMON STYLES
+
+
+
+// START SCREEN
+.startScreen {
+    background-image: linear-gradient($bgGradientOne, $primary);
+    height: 100vh;
+    position: relative;
+    @include flex(column, center, center);
+    // display: none;
+
+    .header {
+        font-family: $headerFont;
+        @include fluid-type();
+        color: $secondary;
+        opacity: 0.5;
+    }
+    
+    .startPrompt {
+        position: absolute;
+        font-size: 30px;
+        top: 50%;
+    }
+}
+// END OF START SCREEN
+
+
+
+// GAME SCREEN
+.gameScreen {
+    display: none;
+   .wrapper {
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+    } 
+
+}
+// END OF GAME SCREEN
+
+
+
+// COMPLETE SCREEN
+.completeScreen {
+    display: none;
+}
+// END OF COMPLETE SCREEN
+
+
+
+// FOOTER
+.footer {
+    background-color: $primary;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    @include flex(default, space-between, center);
+
+    .footerButton {
+        font-family: $bodyFont;
+        background-color: $accent;
+        background-image: linear-gradient(to right, $accent, $secondary);
+        color: $white;
+        padding: 5px 40px;
+        border-radius: 20px;
+        filter: $dropShadow;
+    }
+
+    .infoBox {
+        display: none;
+    }
+
+    .socialLinks {
+        ul {
+            @include flex()
+        }
+
+        a {
+            padding: 10px;
+            background-color: $socialButtons;
+            margin: 10px;
+            border-radius: 50%;
+            filter: $dropShadow;
+        }
+    }
+
+}
+// END OF FOOTER

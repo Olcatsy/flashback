@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src='https://kit.fontawesome.com/cb6fbd44a4.js' crossorigin='anonymous'></script>
-    <title>Memory</title>
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700|Sarpanch:500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Flashback</title>
 </head>
 
 <body>
@@ -14,8 +16,8 @@
     <section class="startScreen">
         <!-- Think about a better title -->
         <!-- Also need to figure out if this is a p or an h1. OR i should animate it to go to the top of the page-->
-        <p class="">Memory</p>
-        <p>Press Enter to start</p>
+        <p class="header">Flashback</p>
+        <p class="startPrompt">Click here to start</p>
     </section>
     <!-- End of Start Screen -->
 
@@ -25,7 +27,7 @@
         <div class="wrapper">
 
             <!-- Need to figure out if this is an h1 -->
-            <h1 class="logo">Memory</h1>
+            <h1 class="logo">Flashback</h1>
 
             <p id="pairCounter" class="pairCounter">Pairs matched: <span id="pairCounterNumber">0</span></p>
 
@@ -39,77 +41,59 @@
 
     <!-- Compete screen -->
     <section class="completeScreen">
-        <div class="wrapper">
-            <h2>Complete!</h2>
-            <p>Great job</p>
-            <button class="reset" type="button" data-buttonFunction="reset">Play Again</button>
-        </div>
+        <h2>Complete!</h2>
+        <p>Great job</p>
+        <button class="reset" type="button" data-buttonFunction="reset">Play 
     </section>
     <!-- End of Compete screen -->
 
-    <footer>
-        <div class="wrapper">
+    <footer class="footer">
+        <!-- Rules and Reset buttons -->
+        <div class="buttonsContainer">
 
-            <!-- Rules and Reset buttons -->
-            <div class="buttonsContainer">
+            <button id="infoButton" class="footerButton" type="button">Info</button>
 
-                <button id="infoButton" class="footerButton" type="button">Info</button>
-
-                <div id="InfoBox" class="InfoBox">
-                    <p class="rules">
-                        <!-- Rules copy goes here -->
-                    </p>
-
-                    <div class="credits">
-                        <p>Created by Olga Filiushkina</p>
-                        <p>Icons made by <a href="https://www.flaticon.com/authors/vitaly-gorbachev" title="Vitaly Gorbachev">Vitaly Gorbachev</a>from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
-                        <a href="https://www.freevector.com/minimal-background-design-30345#">FreeVector.com</a>
-                    </div>
-
-                </div>
-
-                <button class="reset footerButton" type="button">Reset</button>
-
-            </div>
-
-            <!-- Social links and credits -->
-            <div class="socialContainer">
-                <div class="socialLinks">
-                    <ul>
-                        <li>
-                            <!-- Website -->
-                            <a href="http://olgafil.com/"><i class="fas fa-external-link-alt"></i></a>
-                        </li>
-                        <li>
-                            <!-- Twitter -->
-                            <a href="https://twitter.com/OlgaFilCodes"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <!-- Codepen -->
-                            <a href="https://codepen.io/OlgaFil"><i class="fab fa-codepen"></i></a>
-                        </li>
-                        <li>
-                            <!-- GitHub -->
-                            <a href="https://github.com/Olcatsy"><i class="fab fa-github"></i></a>
-                        </li>
-                    </ul>
-                </div>
+            <div id="infoBox" class="infoBox">
+                <p class="rules">
+                    <!-- Rules copy goes here -->
+                </p>
 
                 <div class="credits">
                     <p>Created by Olga Filiushkina</p>
-                    <p>Icons made by <a href="https://www.flaticon.com/authors/vitaly-gorbachev"
-                            title="Vitaly Gorbachev">Vitaly Gorbachev</a>from <a href="https://www.flaticon.com/"
-                            title="Flaticon"> www.flaticon.com</a></p>
+
+                    <p>Icons made by <a href="https://www.flaticon.com/authors/vitaly-gorbachev" title="Vitaly Gorbachev">Vitaly Gorbachev</a>from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></p>
+                    <p>Card back from <a href="https://www.freevector.com/minimal-background-design-30345#">FreeVector.com</a></p>
+                    
                 </div>
+
             </div>
+
+            <button class="reset footerButton" type="button">Reset</button>
+
         </div>
 
-
+        <!-- Social links and credits -->
+        <div class="socialLinks">
+            <ul>
+                <li>
+                    <!-- Website -->
+                    <a href="http://olgafil.com/"><i class="fas fa-external-link-alt"></i></a>
+                </li>
+                <li>
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/OlgaFilCodes"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li>
+                    <!-- Codepen -->
+                    <a href="https://codepen.io/OlgaFil"><i class="fab fa-codepen"></i></a>
+                </li>
+                <li>
+                    <!-- GitHub -->
+                    <a href="https://github.com/Olcatsy"><i class="fab fa-github"></i></a>
+                </li>
+            </ul>
+        </div>
     </footer>
-
-
-
-
 </body>
 
 </html>
