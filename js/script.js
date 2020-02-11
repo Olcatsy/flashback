@@ -1,7 +1,8 @@
 const app = {};
 
-// -Store cards as objects in an array.Each card object will contain an id, which determines which card they match, and also serves as a reference for design image in the assets folder 
-// this array contains card duplicated - look into a way to generate two copies when randomized?
+// DECK: cards are stored as objects in an array, each containing an id, which determines which pair they belong to, and also serves as a reference for corresponding image in the assets folder 
+// ? this array contains card duplicated - look into a way to generate two copies when randomized?
+
 app.deck = [
     // pair 1
     {
@@ -132,9 +133,11 @@ app.deck = [
     },
 ]
 
-// helper RNG using Fisher-Yates shuffle algorithm, a cool thing I found on the internet. Shuffled the deck and returns the rearranged array
-app.shuffle = function() {
-    let deck = app.deck;
+
+// SHUFFLE: helper RNG using Fisher-Yates shuffle algorithm, a cool thing I found on the internet. Shuffled the deck and returns the rearranged array
+
+app.shuffle = function(deck) {
+    // let deck = app.deck;
     for (let i = deck.length - 1; i > 0; i--) {
         const swapIndex = Math.floor(Math.random() * (i + 1));
         const currentCard = deck[i];
@@ -145,14 +148,16 @@ app.shuffle = function() {
     return deck;
 }
 
-// populates the game board with the shuffled cards
+
+// CREATE BOARD: populates the game board with the shuffled cards
+
 app.createBoard = function() {
     // shuffle the deck
-    let shuffledDeck = app.shuffle();
+    let shuffledDeck = app.shuffle(app.deck);
     
-    // loop through the aray, create html elemenent for each card and append it to .gameBoard. The id property of the object is store in data attribute
-    for (let i = 0; i <= shuffledDeck.length; i++){
-        let cardTemplate = `<div class="card" data-pairId = '${shuffledDeck[i].id}'></div>`; //I'm geting a weird error on this line saying shuffledDeck[i] is undefined, but the function works otherwise
+    // loop through the array, create html elements for each card and append it to .gameBoard. The id property of the object is store in data attribute
+    for (let i = 0; i < shuffledDeck.length; i++){
+        let cardTemplate = `<div class="card" data-pairId = '${shuffledDeck[i].id}'></div>`;
         $('.gameBoard').append(cardTemplate);
     }
 }
@@ -161,30 +166,28 @@ app.createBoard = function() {
 //have to use data-id attr on cards, because we are selecting an html element
 // changes a card's CSS was if the card was flipped based on it's index in the deck array 
 app.flipCard = function() {
-    let pairId = $(this).data('id');
-    console.log(pairId);
-    // $(this).addClass('faceUp').css(`background-image`, `url(./assets/card-faces/${}.svg)`);
+    $('.gameBoard').on('click', '.card', function () {
+
+        let cardId = $(this).data('pairid');
+        
+        $(this).addClass('faceUp').css(`background-image`, `url(./assets/card-faces/${cardId}.svg)`);
+    });
+    
     // console.log(`url(./assets/card-faces/${app.deck[index].id}.svg)`);
     // console.log(app.deck[index], app.deck[index].id);
 }
 
-app.flipCard(8);
 
+
+
+// APP INIT: 
 app.init = function() {
     app.createBoard();
-    // flips cards, i.e. adds faceUp class 
-    // NEED TO EVENT DELEGATE HERE
-    $('.gameBoard').on('click', '.card', function() {
-        console.log('click!');
-    });
+    app.flipCard()
 }
 
 /*
 -when Start button is clicked, the start screen (which is an overlay) fades out into the game screen
-
-
-
-
 
 
 -when a user clicks on two cards they will get slightly bigger (transform: scale() is perfect for this), and the cards id's will be compared against each other (compare their data-id attributes)

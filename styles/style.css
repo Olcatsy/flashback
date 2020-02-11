@@ -289,6 +289,10 @@ button {
   margin: 0 auto;
 }
 
+.hide {
+  display: none;
+}
+
 .startScreen {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#5F3CBA));
   background-image: linear-gradient(#540187, #5F3CBA);
