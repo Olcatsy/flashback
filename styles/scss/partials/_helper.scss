@@ -1,22 +1,25 @@
-
-
 // COLORS
 $primary: #5F3CBA;
 $secondary: #D31B65;
 $accent: #FD7C20;
 $bgGradientOne: #540187;
 $bgGradientTwo: #B600A6;
-$overlay: #396CD9;
 $socialButtons: #3CB87A;
 $pairCounter: #50C2DA;
 $white: #FCFCFC; 
 $black:#232323;
+// These two are in RGBA, because I need to decrease opacity for the overlay
+$overlayGradientOne: rgba(57,108,217,0.5); // #396CD9
+$overlayGradientTwo: rgba(84,1,135, 0.5); //same as $bgGradientOne
+
 
 // FONT STACKS
 $bodyFont: "Anonymous Pro", monospace;
 $headerFont: "Sarpanch", sans-serif;
 
+// MISC
 $dropShadow: drop-shadow(3px 3px 2px $black);
+
 
 // FLUID TYPE - from https://codepen.io/dbox/pen/meaMba
 @mixin fluid-type($min-font-size: 70px, $max-font-size: 350px, $lower-range: 420px, $upper-range: 1900px) {
@@ -31,9 +34,21 @@ $dropShadow: drop-shadow(3px 3px 2px $black);
   }
 }
 
+// FLEXBOX
 @mixin flex($flexDirection: initial, $justifyContent: initial, $alignItems: initial ) {
     display: flex;
     flex-direction: $flexDirection;
     justify-content: $justifyContent;
     align-items: $alignItems;
+}
+
+@mixin button($color1, $color2) {
+  font-family: inherit;
+  text-transform: capitalize;
+  color: $white;
+  background-color: $color1;
+  background-image: linear-gradient(to right, $color1, $color2);
+  padding: 5px 40px;
+  border-radius: 20px;
+  filter: $dropShadow;
 }

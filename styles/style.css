@@ -283,6 +283,12 @@ button {
   cursor: pointer;
 }
 
+.wrapper {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .startScreen {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#5F3CBA));
   background-image: linear-gradient(#540187, #5F3CBA);
@@ -301,6 +307,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  display: none;
 }
 
 .startScreen .header {
@@ -329,17 +336,110 @@ button {
 }
 
 .gameScreen {
-  display: none;
+  height: 100vh;
+  background-color: #540187;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#B600A6));
+  background-image: linear-gradient(#540187, #B600A6);
+  padding-top: 30px;
 }
 
-.gameScreen .wrapper {
-  width: 80%;
-  max-width: 1200px;
-  margin: 0 auto;
+.gameScreen .logo {
+  text-align: center;
+  text-transform: uppercase;
+  color: #FD7C20;
+  font-family: "Sarpanch", sans-serif;
+  letter-spacing: 10px;
+  font-size: 4rem;
+  text-shadow: 2px 2px 0 #D31B65;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.gameScreen .pairCounter {
+  text-transform: capitalize;
+  text-align: end;
+  font-size: 2.5rem;
+  color: #50C2DA;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.gameScreen .gameBoard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin: 20px auto 35px;
+}
+
+.gameScreen .card {
+  background-color: #232323;
+  min-height: 120px;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+  border-radius: 5px;
+  background-image: url(../assets/card-back.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gameScreen .card.faceUp {
+  background-image: url(../assets/card-faces/001.svg);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
 }
 
 .completeScreen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(57, 108, 217, 0.5);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(57, 108, 217, 0.5)), to(rgba(84, 1, 135, 0.5)));
+  background-image: linear-gradient(to bottom right, rgba(57, 108, 217, 0.5), rgba(84, 1, 135, 0.5));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: none;
+}
+
+.completeScreen h2 {
+  font-family: "Sarpanch", sans-serif;
+  font-size: 5rem;
+  letter-spacing: 2px;
+}
+
+.completeScreen p {
+  margin: 20px 0;
+}
+
+.completeScreen button {
+  font-family: inherit;
+  text-transform: capitalize;
+  color: #FCFCFC;
+  background-color: #B600A6;
+  background-image: -webkit-gradient(linear, left top, right top, from(#B600A6), to(#D31B65));
+  background-image: linear-gradient(to right, #B600A6, #D31B65);
+  padding: 5px 40px;
+  border-radius: 20px;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
 }
 
 .footer {
@@ -348,6 +448,11 @@ button {
   left: 0;
   bottom: 0;
   width: 100%;
+  -webkit-filter: drop-shadow(0 -1px 7px #232323);
+          filter: drop-shadow(0 -1px 7px #232323);
+}
+
+.footer .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -363,12 +468,30 @@ button {
           align-items: center;
 }
 
+.footer .buttonsContainer {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: default;
+          flex-direction: default;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
 .footer .footerButton {
-  font-family: "Anonymous Pro", monospace;
+  font-family: inherit;
+  text-transform: capitalize;
+  color: #FCFCFC;
   background-color: #FD7C20;
   background-image: -webkit-gradient(linear, left top, right top, from(#FD7C20), to(#D31B65));
   background-image: linear-gradient(to right, #FD7C20, #D31B65);
-  color: #FCFCFC;
   padding: 5px 40px;
   border-radius: 20px;
   -webkit-filter: drop-shadow(3px 3px 2px #232323);

@@ -50,8 +50,13 @@ button {
 
 
 // COMMON STYLES
-// END OF COMMON STYLES
+.wrapper {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+} 
 
+// END OF COMMON STYLES
 
 
 // START SCREEN
@@ -60,7 +65,7 @@ button {
     height: 100vh;
     position: relative;
     @include flex(column, center, center);
-    // display: none;
+    display: none;
 
     .header {
         font-family: $headerFont;
@@ -81,12 +86,51 @@ button {
 
 // GAME SCREEN
 .gameScreen {
-    display: none;
-   .wrapper {
-        width: 80%;
-        max-width: 1200px;
-        margin: 0 auto;
-    } 
+    // display: none;
+    height: 100vh;
+    background-color: $bgGradientOne;
+    background-image: linear-gradient($bgGradientOne, $bgGradientTwo);
+    padding-top: 30px;
+
+    .logo {
+        text-align: center;
+        text-transform: uppercase;
+        color: $accent;
+        font-family: $headerFont;
+        letter-spacing: 10px;
+        font-size: 4rem;
+        text-shadow: 2px 2px 0 $secondary;
+        filter: $dropShadow;
+    }
+    .pairCounter {
+        text-transform: capitalize;
+        text-align: end;
+        font-size: 2.5rem;
+        color: $pairCounter;
+        filter: $dropShadow;
+    }
+    .gameBoard {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 10px;
+        margin: 20px auto 35px;
+    }
+    .card {
+        background-color: $black;
+        min-height: 120px;
+        filter: $dropShadow;
+        border-radius: 5px;background-image: url(../assets/card-back.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &.faceUp {
+            // background-image: url(../assets/card-faces/001.svg);
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-position: center;
+        }
+    }
 
 }
 // END OF GAME SCREEN
@@ -95,7 +139,30 @@ button {
 
 // COMPLETE SCREEN
 .completeScreen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: $overlayGradientOne;
+    background-image: linear-gradient(to bottom right, $overlayGradientOne, $overlayGradientTwo);
+    @include flex(column, center, center);
     display: none;
+
+    h2 {
+        font-family: $headerFont;
+        font-size: 5rem;
+        letter-spacing: 2px;
+    }
+
+    p {
+        margin: 20px 0;
+    }
+
+    button {
+        @include button($bgGradientTwo, $secondary);
+    }
 }
 // END OF COMPLETE SCREEN
 
@@ -108,16 +175,19 @@ button {
     left: 0;
     bottom: 0;
     width: 100%;
-    @include flex(default, space-between, center);
+    filter: drop-shadow(0 -1px 7px $black);
+    
+    .wrapper {
+        @include flex(default, space-between, center);
+    }
+
+    .buttonsContainer {
+        width: 30%;
+        @include flex(default, space-between)
+    }
 
     .footerButton {
-        font-family: $bodyFont;
-        background-color: $accent;
-        background-image: linear-gradient(to right, $accent, $secondary);
-        color: $white;
-        padding: 5px 40px;
-        border-radius: 20px;
-        filter: $dropShadow;
+        @include button($accent, $secondary);
     }
 
     .infoBox {
@@ -137,6 +207,5 @@ button {
             filter: $dropShadow;
         }
     }
-
 }
 // END OF FOOTER
