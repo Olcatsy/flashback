@@ -1,32 +1,4 @@
-/*
-
-
--when Start button is clicked, the start screen (which is an overlay) fades out into the game screen
-
--a randomizer function will randomly assign order value to each card, create an array and feed it into a 4x9 grid to create the game board
-
--when a card is clicked, a class of .faceUp will be applied and the background-image will be applied to it
-
--when a user clicks on two cards they will get slightly bigger (transform: scale() is perfect for this), and the cards id's will be compared against each other
-
--if the id's match, they will be removed from the grid, and the pair counter will increase by one
-
--if they don�t match the cards go back face down, and the user has to select again
-
--after comparing the card id's increase the counter if they match, and check if that number is 18 (36 / 2)
-
--if the pair counter is equal to 18  display the winning screen.
-
--Reset Game button on the game screen, and Play Again button on the result screen both have an event listener, that will reload the page (location.reload()) on click
-
--The Rules button on the Start and Game screen will have an event listener that will open a box with the rules on click
-
--The social links at the bottom of the pages will lead to my social media
-
-*/
-
 const app = {};
-
 
 // -Store cards as objects in an array.Each card object will contain an id, which determines which card they match, and also serves as a reference for design image in the assets folder 
 // this array contains card duplicated - look into a way to generate two copies when randomized?
@@ -160,15 +132,79 @@ app.deck = [
     },
 ]
 
+// helper RNG using Fisher-Yates shuffle algorithm, a cool thing I found on the internet. Shuffled the deck and returns the rearranged array
+app.shuffle = function() {
+    let deck = app.deck;
+    for (let i = deck.length - 1; i > 0; i--) {
+        const swapIndex = Math.floor(Math.random() * (i + 1));
+        const currentCard = deck[i];
+        const cardToSwap = deck[swapIndex];
+        deck[i] = cardToSwap;
+        deck[swapIndex] = currentCard;
+    }
+    return deck;
+}
+
+// populates the game board with the shuffled cards
+app.createBoard = function() {
+    // shuffle the deck
+    let shuffledDeck = app.shuffle();
+    
+    // loop through the aray, create html elemenent for each card and append it to .gameBoard. The id property of the object is store in data attribute
+    for (let i = 0; i <= shuffledDeck.length; i++){
+        let cardTemplate = `<div class="card" data-pairId = '${shuffledDeck[i].id}'></div>`; //I'm geting a weird error on this line saying shuffledDeck[i] is undefined, but the function works otherwise
+        $('.gameBoard').append(cardTemplate);
+    }
+}
+
+
+//have to use data-id attr on cards, because we are selecting an html element
+// changes a card's CSS was if the card was flipped based on it's index in the deck array 
 app.flipCard = function() {
-    $(this).addClass('faceUp').css('background-image: url(../assets/card-faces/001.svg)');
+    let pairId = $(this).data('id');
+    console.log(pairId);
+    // $(this).addClass('faceUp').css(`background-image`, `url(./assets/card-faces/${}.svg)`);
+    // console.log(`url(./assets/card-faces/${app.deck[index].id}.svg)`);
+    // console.log(app.deck[index], app.deck[index].id);
 }
 
+app.flipCard(8);
 
-app.init = () => {
+app.init = function() {
+    app.createBoard();
     // flips cards, i.e. adds faceUp class 
-    $('.card').on('click', app.flipCard);
+    // NEED TO EVENT DELEGATE HERE
+    $('.gameBoard').on('click', '.card', function() {
+        console.log('click!');
+    });
 }
+
+/*
+-when Start button is clicked, the start screen (which is an overlay) fades out into the game screen
+
+
+
+
+
+
+-when a user clicks on two cards they will get slightly bigger (transform: scale() is perfect for this), and the cards id's will be compared against each other (compare their data-id attributes)
+
+-if the id's match, they will be removed from the grid, and the pair counter will increase by one
+
+-if they don�t match the cards go back face down, and the user has to select again
+
+-after comparing the card id's increase the counter if they match, and check if that number is 18 (36 / 2)
+
+-if the pair counter is equal to 18  display the winning screen.
+
+-Reset Game button on the game screen, and Play Again button on the result screen both have an event listener, that will reload the page (location.reload()) on click
+
+-The Rules button on the Start and Game screen will have an event listener that will open a box with the rules on click
+
+-The social links at the bottom of the pages will lead to my social media
+
+*/
+
 
 $(function() {
   app.init();

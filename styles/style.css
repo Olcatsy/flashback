@@ -387,7 +387,6 @@ button {
 }
 
 .gameScreen .card.faceUp {
-  background-image: url(../assets/card-faces/001.svg);
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center;
