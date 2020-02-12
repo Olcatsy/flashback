@@ -133,6 +133,14 @@ app.deck = [
     },
 ]
 
+// variables to STORE ID of selected cards to compare them
+app.selected1 = '';
+app.selected2 = '';
+
+// Counter for matched pairs
+app.pairCounter = 0;
+
+
 
 // SHUFFLE: helper RNG using Fisher-Yates shuffle algorithm, a cool thing I found on the internet. Shuffled the deck and returns the rearranged array
 
@@ -162,42 +170,64 @@ app.createBoard = function() {
     }
 }
 
-// FLIP CARD - changes a card's CSS on click as if the card was flipped 
+
+
+
+
+// COMPARE SELECTED CARDS: compares the id of selected cards. If they match, .If they don't match . The variables that store card id's get cleared
+app.compareSelectedCards = function() {
+    
+    // check if two cards were selected
+    if (app.selected1 && app.selected2) {
+
+        // check if card id's match
+        if (app.selected1 === app.selected2) {
+
+            // timeout for user to see their card
+            setTimeout(function() {
+               //* set cards' visibility to none
+            $('.faceUp').addClass('hidden'); 
+            }, 400)
+
+            //* increase pair counter by 1
+            app.pairCounter += 1;
+            $('#pairCounterValue').val(app.pairCounter).text(app.pairCounter);
+        } else {
+            setTimeout(function() {
+                //* remove faceUp class from these cards
+                $('.faceUp').removeClass('faceUp').css('background-image', 'url(./assets/card-back.jpg)');
+            }, 400);
+        }
+        app.selected1 = 0;
+        app.selected2 = 0;
+    }
+}
+
+
+// FLIP CARD: changes a card's CSS on click as if the card was flipped 
 app.flipCard = function() {
     $('.gameBoard').on('click', '.card', function () {
 
         // stores card's data-pairId value
-        //? for some reason it doesn't recognize 'pairId, but whatever 
         let cardId = $(this).data('pairid');
         
         // adds .faceUp class and adds an svg background
         $(this).addClass('faceUp').css(`background-image`, `url(./assets/card-faces/${cardId}.svg)`);
+
+        // store the pairId value for selected cards in one of the selectedCard's variables (whichever one is empty)
+        if (!app.selected1) {
+            app.selected1 = cardId;
+        } else {
+            app.selected2 = cardId;
+        }
+
+        setTimeout(app.compareSelectedCards(), 1000)
+        
     });
 }
 
-// -when a user clicks on two cards they will get slightly bigger (transform: scale() is perfect for this), and the cards id's will be compared against each other (compare their data-id attributes)
-app.selectPair = function() {
-
-    let card1 = '';
-    let card2 = '';
-    let pairCounter = 0;
-
-    //* store data-pairId value of clicked cards in the variables, 
-    //*(disable clicks on other cards?), 
-    //*compare id values
-    if (card1 === card2) {
-        //* set cards' visibility to none
-        //* increase pair counter by 1
-    } else {
-        //*remove faceUp class from the cards
-    }
 
 
-}
-
-// -if the id's match, they will be removed from the grid, and the pair counter will increase by one
-
-// -if they don�t match the cards go back face down, and the user has to select again
 
 // -after comparing the card id's increase the counter if they match, and check if that number is 18 (36 / 2)
 

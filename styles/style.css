@@ -396,6 +396,10 @@ button {
   background-position: center;
 }
 
+.gameScreen .card.hidden {
+  visibility: hidden;
+}
+
 .completeScreen {
   position: absolute;
   top: 0;
