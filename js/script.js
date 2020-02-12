@@ -157,6 +157,7 @@ app.shuffle = function(deck) {
 }
 
 
+
 // CREATE BOARD: populates the game board with the shuffled cards
 
 app.createBoard = function() {
@@ -172,9 +173,8 @@ app.createBoard = function() {
 
 
 
-
-
 // COMPARE SELECTED CARDS: compares the id of selected cards. If they match, .If they don't match . The variables that store card id's get cleared
+
 app.compareSelectedCards = function() {
     
     // check if two cards were selected
@@ -183,19 +183,19 @@ app.compareSelectedCards = function() {
         // check if card id's match
         if (app.selected1 === app.selected2) {
 
-            // timeout for user to see their card
+            // timeout to give user an opportunity to see their card
             setTimeout(function() {
-               //* set cards' visibility to none
-            $('.faceUp').addClass('hidden'); 
+               // set cards' visibility to none
+                $('.faceUp').addClass('hidden'); 
             }, 400)
 
-            //* increase pair counter by 1
+            // increase pair counter by 1
             app.pairCounter += 1;
             $('#pairCounterValue').val(app.pairCounter).text(app.pairCounter);
         } else {
             setTimeout(function() {
-                //* remove faceUp class from these cards
-                $('.faceUp').removeClass('faceUp').css('background-image', 'url(./assets/card-back.jpg)');
+                // remove faceUp class from these cards and allows clicking on it
+                $('.faceUp').removeClass('faceUp').css({'background-image': 'url(./assets/card-back.jpg)', 'pointer-events': 'auto'});
             }, 400);
         }
         app.selected1 = 0;
@@ -204,15 +204,16 @@ app.compareSelectedCards = function() {
 }
 
 
+
 // FLIP CARD: changes a card's CSS on click as if the card was flipped 
 app.flipCard = function() {
     $('.gameBoard').on('click', '.card', function () {
 
         // stores card's data-pairId value
         let cardId = $(this).data('pairid');
-        
-        // adds .faceUp class and adds an svg background
-        $(this).addClass('faceUp').css(`background-image`, `url(./assets/card-faces/${cardId}.svg)`);
+
+        // adds .faceUp class, adds an svg background and prevents clicking on it again
+        $(this).addClass('faceUp').css({'background-image': `url(./assets/card-faces/${cardId}.svg)`, 'pointer-events': 'none'});
 
         // store the pairId value for selected cards in one of the selectedCard's variables (whichever one is empty)
         if (!app.selected1) {
@@ -221,27 +222,29 @@ app.flipCard = function() {
             app.selected2 = cardId;
         }
 
-        setTimeout(app.compareSelectedCards(), 1000)
-        
+        setTimeout(app.compareSelectedCards(), 1000);
+
+        if ($(this).hasClass('faceUp')) {
+            $(this).css('pointer-events', 'none');
+        } else {
+            $(this).css('pointer-events', 'auto');
+        }
     });
 }
 
-
-
-
-// -after comparing the card id's increase the counter if they match, and check if that number is 18 (36 / 2)
-
+//-when Start button is clicked, the start screen (which is an overlay) fades out into the game screen - start function (might include create board here)
 
 
 
 // APP INIT: 
 app.init = function() {
     app.createBoard();
-    app.flipCard()
+    app.flipCard();
+    
 }
 
 /*
--when Start button is clicked, the start screen (which is an overlay) fades out into the game screen - start function (might include create board here)
+
 
 
 
