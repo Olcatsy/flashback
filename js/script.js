@@ -142,6 +142,15 @@ app.pairCounter = 0;
 
 
 
+// START GAME: when start screen is clicked, the screen fades out, and reveals the game board
+app.startGame = function() {
+    $('.startScreen').on('click', function() {
+        $(this).fadeOut();
+    });
+}
+
+
+
 // SHUFFLE: helper RNG using Fisher-Yates shuffle algorithm, a cool thing I found on the internet. Shuffled the deck and returns the rearranged array
 
 app.shuffle = function(deck) {
@@ -205,6 +214,16 @@ app.compareSelectedCards = function() {
 
 
 
+
+app.youAreComplete = function () {
+    if (app.pairCounter === 1) {
+        $('.completeScreen').fadeIn();
+        console.log('complete');
+    }
+}
+
+
+
 // FLIP CARD: changes a card's CSS on click as if the card was flipped 
 app.flipCard = function() {
     $('.gameBoard').on('click', '.card', function () {
@@ -222,32 +241,34 @@ app.flipCard = function() {
             app.selected2 = cardId;
         }
 
-        setTimeout(app.compareSelectedCards(), 1000);
+        app.compareSelectedCards();
 
-        if ($(this).hasClass('faceUp')) {
-            $(this).css('pointer-events', 'none');
-        } else {
-            $(this).css('pointer-events', 'auto');
-        }
+        app.youAreComplete();
+
     });
 }
 
-//-when Start button is clicked, the start screen (which is an overlay) fades out into the game screen - start function (might include create board here)
+
+
+// RESTART: clicking a restart button refreshes the whole page
+app.restart = function() {
+    $('.reset').on('click', () => {
+        location.reload();
+    })
+}
 
 
 
 // APP INIT: 
 app.init = function() {
+    app.startGame();
     app.createBoard();
+    app.youAreComplete();
     app.flipCard();
-    
+    app.restart();
 }
 
 /*
-
-
-
-
 
 -if the pair counter is equal to 18  display the winning screen.
 

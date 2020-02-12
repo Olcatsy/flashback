@@ -66,10 +66,15 @@ button {
 // START SCREEN
 .startScreen {
     background-image: linear-gradient($bgGradientOne, $primary);
-    height: 100vh;
-    position: relative;
+    // height: 100vh;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
     @include flex(column, center, center);
-    display: none;
+
 
     .header {
         font-family: $headerFont;
@@ -151,15 +156,22 @@ button {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 30;
     background-color: $overlayGradientOne;
     background-image: linear-gradient(to bottom right, $overlayGradientOne, $overlayGradientTwo);
-    @include flex(column, center, center);
-    display: none;
+    // display: none;
+
+    .container {
+        @include flex(column, center, center);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
     h2 {
         font-family: $headerFont;
-        font-size: 5rem;
+        font-size: 7.5rem;
         letter-spacing: 2px;
     }
 
@@ -183,6 +195,7 @@ button {
     bottom: 0;
     width: 100%;
     filter: drop-shadow(0 -1px 7px $black);
+    z-index: 20;
     
     .wrapper {
         @include flex(default, space-between, center);
