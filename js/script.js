@@ -162,20 +162,44 @@ app.createBoard = function() {
     }
 }
 
-
-//have to use data-id attr on cards, because we are selecting an html element
-// changes a card's CSS was if the card was flipped based on it's index in the deck array 
+// FLIP CARD - changes a card's CSS on click as if the card was flipped 
 app.flipCard = function() {
     $('.gameBoard').on('click', '.card', function () {
 
+        // stores card's data-pairId value
+        //? for some reason it doesn't recognize 'pairId, but whatever 
         let cardId = $(this).data('pairid');
         
+        // adds .faceUp class and adds an svg background
         $(this).addClass('faceUp').css(`background-image`, `url(./assets/card-faces/${cardId}.svg)`);
     });
-    
-    // console.log(`url(./assets/card-faces/${app.deck[index].id}.svg)`);
-    // console.log(app.deck[index], app.deck[index].id);
 }
+
+// -when a user clicks on two cards they will get slightly bigger (transform: scale() is perfect for this), and the cards id's will be compared against each other (compare their data-id attributes)
+app.selectPair = function() {
+
+    let card1 = '';
+    let card2 = '';
+    let pairCounter = 0;
+
+    //* store data-pairId value of clicked cards in the variables, 
+    //*(disable clicks on other cards?), 
+    //*compare id values
+    if (card1 === card2) {
+        //* set cards' visibility to none
+        //* increase pair counter by 1
+    } else {
+        //*remove faceUp class from the cards
+    }
+
+
+}
+
+// -if the id's match, they will be removed from the grid, and the pair counter will increase by one
+
+// -if they don�t match the cards go back face down, and the user has to select again
+
+// -after comparing the card id's increase the counter if they match, and check if that number is 18 (36 / 2)
 
 
 
@@ -187,24 +211,16 @@ app.init = function() {
 }
 
 /*
--when Start button is clicked, the start screen (which is an overlay) fades out into the game screen
+-when Start button is clicked, the start screen (which is an overlay) fades out into the game screen - start function (might include create board here)
 
 
--when a user clicks on two cards they will get slightly bigger (transform: scale() is perfect for this), and the cards id's will be compared against each other (compare their data-id attributes)
 
--if the id's match, they will be removed from the grid, and the pair counter will increase by one
-
--if they don�t match the cards go back face down, and the user has to select again
-
--after comparing the card id's increase the counter if they match, and check if that number is 18 (36 / 2)
 
 -if the pair counter is equal to 18  display the winning screen.
 
 -Reset Game button on the game screen, and Play Again button on the result screen both have an event listener, that will reload the page (location.reload()) on click
 
 -The Rules button on the Start and Game screen will have an event listener that will open a box with the rules on click
-
--The social links at the bottom of the pages will lead to my social media
 
 */
 
