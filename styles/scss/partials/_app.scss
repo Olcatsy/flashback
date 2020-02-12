@@ -6,7 +6,7 @@ body {
     font-size: 2rem;
     position: relative;
     background-color: $primary;
-    color: $white;
+    color: $primaryWhite;
     font-family: $bodyFont;
 }
 
@@ -126,7 +126,7 @@ button {
         margin: 20px auto 35px;
     }
     .card {
-        background-color: $black;
+        background-color: $primaryBlack;
         min-height: 120px;
         filter: $dropShadow;
         border-radius: 5px;background-image: url(../assets/card-back.jpg);
@@ -141,6 +141,10 @@ button {
 
         &.hidden {
             visibility: hidden;
+        }
+
+        @include hover() {
+            border: 2px solid $pairCounter;
         }
     }
 
@@ -158,8 +162,8 @@ button {
     width: 100%;
     z-index: 30;
     background-color: $overlayGradientOne;
-    background-image: linear-gradient(to bottom right, $overlayGradientOne, $overlayGradientTwo);
-    // display: none;
+    background-image: linear-gradient(to bottom right, $overlayGradientOne 15%, $overlayGradientTwo);
+    display: none;
 
     .container {
         @include flex(column, center, center);
@@ -173,6 +177,9 @@ button {
         font-family: $headerFont;
         font-size: 7.5rem;
         letter-spacing: 2px;
+        color: $primaryWhite;
+        text-shadow: 3px 3px 0 $bgGradientTwo;
+        filter: $dropShadow;
     }
 
     p {
@@ -194,7 +201,7 @@ button {
     left: 0;
     bottom: 0;
     width: 100%;
-    filter: drop-shadow(0 -1px 7px $black);
+    filter: drop-shadow(0 -1px 7px $primaryBlack);
     z-index: 20;
     
     .wrapper {
@@ -203,7 +210,8 @@ button {
 
     .buttonsContainer {
         width: 30%;
-        @include flex(default, space-between)
+        @include flex(default, space-between);
+        position: relative;
     }
 
     .footerButton {
@@ -212,6 +220,37 @@ button {
 
     .infoBox {
         display: none;
+        background-color: $bgGradientOne;
+        color: $primaryWhite;
+        line-height: 1.5;
+        position: absolute;
+        bottom: 200%;
+        padding: 20px 30px;
+        min-width: 350px;
+        border: 2px solid $pairCounter;
+
+        .rules {
+            margin-bottom: 40px;
+        }
+
+        .credits {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+
+            p {
+                margin: 5px 0;
+            }
+
+            a {
+                font-weight: 600;
+                letter-spacing: 2px;
+
+                @include hover() {
+                    color: $pairCounter;
+                }
+            }
+
+        }
     }
 
     .socialLinks {
@@ -225,6 +264,11 @@ button {
             margin: 10px;
             border-radius: 50%;
             filter: $dropShadow;
+
+            @include hover() {
+                background-color: lighten($socialButtons, 10%);
+                transform: scale(1.1);
+            }
         }
     }
 }

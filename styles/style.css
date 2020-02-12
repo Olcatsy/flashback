@@ -403,6 +403,10 @@ button {
   visibility: hidden;
 }
 
+.gameScreen .card:hover, .gameScreen .card:focus {
+  border: 2px solid #50C2DA;
+}
+
 .completeScreen {
   position: absolute;
   top: 0;
@@ -410,9 +414,10 @@ button {
   left: 0;
   width: 100%;
   z-index: 30;
-  background-color: rgba(57, 108, 217, 0.5);
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(57, 108, 217, 0.5)), to(rgba(84, 1, 135, 0.5)));
-  background-image: linear-gradient(to bottom right, rgba(57, 108, 217, 0.5), rgba(84, 1, 135, 0.5));
+  background-color: rgba(57, 108, 217, 0.3);
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(15%, rgba(57, 108, 217, 0.3)), to(rgba(84, 1, 135, 0.5)));
+  background-image: linear-gradient(to bottom right, rgba(57, 108, 217, 0.3) 15%, rgba(84, 1, 135, 0.5));
+  display: none;
 }
 
 .completeScreen .container {
@@ -440,6 +445,10 @@ button {
   font-family: "Sarpanch", sans-serif;
   font-size: 7.5rem;
   letter-spacing: 2px;
+  color: #FCFCFC;
+  text-shadow: 3px 3px 0 #B600A6;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
 }
 
 .completeScreen p {
@@ -457,6 +466,11 @@ button {
   border-radius: 20px;
   -webkit-filter: drop-shadow(3px 3px 2px #232323);
           filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.completeScreen button:hover, .completeScreen button:focus {
+  background-image: -webkit-gradient(linear, left top, right top, from(#e900d5), to(#e63b80));
+  background-image: linear-gradient(to right, #e900d5, #e63b80);
 }
 
 .footer {
@@ -501,6 +515,7 @@ button {
   -webkit-box-align: initial;
       -ms-flex-align: initial;
           align-items: initial;
+  position: relative;
 }
 
 .footer .footerButton {
@@ -516,8 +531,43 @@ button {
           filter: drop-shadow(3px 3px 2px #232323);
 }
 
+.footer .footerButton:hover, .footer .footerButton:focus {
+  background-image: -webkit-gradient(linear, left top, right top, from(#fd9a53), to(#e63b80));
+  background-image: linear-gradient(to right, #fd9a53, #e63b80);
+}
+
 .footer .infoBox {
   display: none;
+  background-color: #540187;
+  color: #FCFCFC;
+  line-height: 1.5;
+  position: absolute;
+  bottom: 200%;
+  padding: 20px 30px;
+  min-width: 350px;
+  border: 2px solid #50C2DA;
+}
+
+.footer .infoBox .rules {
+  margin-bottom: 40px;
+}
+
+.footer .infoBox .credits {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.footer .infoBox .credits p {
+  margin: 5px 0;
+}
+
+.footer .infoBox .credits a {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.footer .infoBox .credits a:hover, .footer .infoBox .credits a:focus {
+  color: #50C2DA;
 }
 
 .footer .socialLinks ul {
@@ -543,4 +593,10 @@ button {
   border-radius: 50%;
   -webkit-filter: drop-shadow(3px 3px 2px #232323);
           filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.footer .socialLinks a:hover, .footer .socialLinks a:focus {
+  background-color: #5dca94;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }

@@ -6,10 +6,10 @@ $bgGradientOne: #540187;
 $bgGradientTwo: #B600A6;
 $socialButtons: #3CB87A;
 $pairCounter: #50C2DA;
-$white: #FCFCFC; 
-$black:#232323;
+$primaryWhite: #FCFCFC; 
+$primaryBlack:#232323;
 // These two are in RGBA, because I need to decrease opacity for the overlay
-$overlayGradientOne: rgba(57,108,217,0.5); // #396CD9
+$overlayGradientOne: rgba(57,108,217,0.3); // #396CD9
 $overlayGradientTwo: rgba(84,1,135, 0.5); //same as $bgGradientOne
 
 
@@ -18,7 +18,7 @@ $bodyFont: "Anonymous Pro", monospace;
 $headerFont: "Sarpanch", sans-serif;
 
 // MISC
-$dropShadow: drop-shadow(3px 3px 2px $black);
+$dropShadow: drop-shadow(3px 3px 2px $primaryBlack);
 
 
 // FLUID TYPE - from https://codepen.io/dbox/pen/meaMba
@@ -34,7 +34,17 @@ $dropShadow: drop-shadow(3px 3px 2px $black);
   }
 }
 
-// FLEXBOX
+
+// HOVER AND FOCUS STATES
+@mixin hover() {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+
+// FLEXBOX SHORTHAND
 @mixin flex($flexDirection: initial, $justifyContent: initial, $alignItems: initial ) {
     display: flex;
     flex-direction: $flexDirection;
@@ -42,13 +52,20 @@ $dropShadow: drop-shadow(3px 3px 2px $black);
     align-items: $alignItems;
 }
 
+// GRADIENT BUTTON
 @mixin button($color1, $color2) {
   font-family: inherit;
   text-transform: capitalize;
-  color: $white;
+  color: $primaryWhite;
   background-color: $color1;
   background-image: linear-gradient(to right, $color1, $color2);
   padding: 5px 40px;
   border-radius: 20px;
   filter: $dropShadow;
+
+    @include hover() {
+      background-image: linear-gradient(to right,
+      lighten($color1, 10%), lighten($color2, 10%));
+    }
 }
+
