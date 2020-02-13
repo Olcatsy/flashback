@@ -243,7 +243,9 @@ html {
 body {
   font-size: 2rem;
   position: relative;
-  background-color: #5F3CBA;
+  background-color: #540187;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#B600A6));
+  background-image: linear-gradient(#540187, #B600A6);
   color: #FCFCFC;
   font-family: "Anonymous Pro", monospace;
 }
@@ -293,13 +295,13 @@ button {
   display: none;
 }
 
-/* large tablet */
-@media (max-width: 980px) {
+@media (max-width: 1024px) {
   .wrapper {
     width: 90%;
   }
 }
 
+/* large tablet */
 /* small tablet */
 @media (max-width: 768px) {
   .wrapper {
@@ -352,10 +354,25 @@ button {
   }
 }
 
-.startScreen .startPrompt {
+.startScreen .startButton {
   position: absolute;
-  font-size: 30px;
-  top: 50%;
+  font-family: inherit;
+  color: #FCFCFC;
+  background: transparent;
+  padding: 100px;
+  font-size: calc(20px + 10 * ( (100vw - 420px) / 1480));
+}
+
+@media screen and (max-width: 420px) {
+  .startScreen .startButton {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .startScreen .startButton {
+    font-size: 30px;
+  }
 }
 
 /* large tablet */
@@ -370,9 +387,6 @@ button {
 /* mobile */
 .gameScreen {
   height: 100vh;
-  background-color: #540187;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#B600A6));
-  background-image: linear-gradient(#540187, #B600A6);
   padding-top: 30px;
 }
 
@@ -417,6 +431,7 @@ button {
   background-image: url(../assets/card-back.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom left;
 }
 
 .gameScreen .card.faceUp {
@@ -437,15 +452,47 @@ button {
 /* small tablet */
 @media (max-width: 768px) {
   .gameScreen {
-    padding-top: 15px;
+    padding: 15px 0;
+    height: auto;
   }
   .gameScreen .pairCounter {
     text-align: center;
     margin-top: 5px;
   }
+  .gameScreen .gameBoard {
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: (1fr)[6];
+        grid-template-rows: repeat(6, 1fr);
+    margin-bottom: 0;
+  }
+  .gameScreen .card {
+    min-height: 95px;
+  }
 }
 
 /* mobile */
+@media (max-width: 480px) {
+  .gameScreen .logo {
+    font-size: 3rem;
+  }
+  .gameScreen .pairCounter {
+    font-size: 2rem;
+  }
+  .gameScreen .gameBoard {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: (1fr)[9];
+        grid-template-rows: repeat(9, 1fr);
+  }
+  .gameScreen .card {
+    min-height: 80px;
+  }
+  .gameScreen .faceUp {
+    background-size: 60%;
+  }
+}
+
 .completeScreen {
   position: absolute;
   top: 0;
@@ -648,6 +695,9 @@ button {
 
 /* small tablet */
 @media (max-width: 768px) {
+  .footer .wrapper {
+    display: none;
+  }
   .footer .footerButton {
     padding: 10px 30px;
   }

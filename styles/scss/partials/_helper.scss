@@ -22,7 +22,7 @@ $dropShadow: drop-shadow(3px 3px 2px $primaryBlack);
 
 
 // FLUID TYPE - from https://codepen.io/dbox/pen/meaMba
-@mixin fluid-type($min-font-size: 70px, $max-font-size: 350px, $lower-range: 420px, $upper-range: 1900px) {
+@mixin fluidType($min-font-size: 70px, $max-font-size: 350px, $lower-range: 420px, $upper-range: 1900px) {
 
   font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
   
