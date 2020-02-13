@@ -60,6 +60,23 @@ button {
     display: none;
 }
 
+/* large tablet */
+@media (max-width: 980px) {
+    .wrapper {
+        width: 90%;
+    }
+}
+/* small tablet */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+/* mobile */
+@media (max-width: 480px) {
+
+}
 // END OF COMMON STYLES
 
 
@@ -96,7 +113,13 @@ button {
 }
 /* small tablet */
 @media (max-width: 768px) {
+    .startScreen {
 
+        .header {
+            position: relative;
+            bottom: 50px;
+        }
+    }   
 }
 /* mobile */
 @media (max-width: 480px) {
@@ -169,7 +192,14 @@ button {
 }
 /* small tablet */
 @media (max-width: 768px) {
+    .gameScreen {
+        padding-top: 15px;
 
+        .pairCounter {
+            text-align: center;
+            margin-top: 5px;
+        }
+    }
 }
 /* mobile */
 @media (max-width: 480px) {
@@ -235,8 +265,8 @@ button {
     }
 
     .buttonsContainer {
-        width: 30%;
-        @include flex(default, space-between);
+        width: 40%;
+        @include flex(default, space-around);
         position: relative;
     }
 
@@ -301,11 +331,21 @@ button {
 
 /* large tablet */
 @media (max-width: 980px) {
+    .footer {
 
+        .buttonsContainer {
+            width: 50%;
+        }
+    }
 }
 /* small tablet */
 @media (max-width: 768px) {
+    .footer {
 
+        .footerButton {
+            padding: 10px 30px;
+        }
+    }
 }
 /* mobile */
 @media (max-width: 480px) {

@@ -293,6 +293,22 @@ button {
   display: none;
 }
 
+/* large tablet */
+@media (max-width: 980px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+/* small tablet */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+/* mobile */
 .startScreen {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#5F3CBA));
   background-image: linear-gradient(#540187, #5F3CBA);
@@ -342,6 +358,16 @@ button {
   top: 50%;
 }
 
+/* large tablet */
+/* small tablet */
+@media (max-width: 768px) {
+  .startScreen .header {
+    position: relative;
+    bottom: 50px;
+  }
+}
+
+/* mobile */
 .gameScreen {
   height: 100vh;
   background-color: #540187;
@@ -407,6 +433,19 @@ button {
   border: 2px solid #50C2DA;
 }
 
+/* large tablet */
+/* small tablet */
+@media (max-width: 768px) {
+  .gameScreen {
+    padding-top: 15px;
+  }
+  .gameScreen .pairCounter {
+    text-align: center;
+    margin-top: 5px;
+  }
+}
+
+/* mobile */
 .completeScreen {
   position: absolute;
   top: 0;
@@ -501,7 +540,7 @@ button {
 }
 
 .footer .buttonsContainer {
-  width: 30%;
+  width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -509,9 +548,8 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: default;
           flex-direction: default;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: initial;
       -ms-flex-align: initial;
           align-items: initial;
@@ -600,3 +638,19 @@ button {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
+/* large tablet */
+@media (max-width: 980px) {
+  .footer .buttonsContainer {
+    width: 50%;
+  }
+}
+
+/* small tablet */
+@media (max-width: 768px) {
+  .footer .footerButton {
+    padding: 10px 30px;
+  }
+}
+
+/* mobile */
