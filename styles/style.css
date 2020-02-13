@@ -1,0 +1,602 @@
+html {
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+article, aside, footer, header, nav, section {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+figcaption, figure, main {
+  display: block;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+b, strong {
+  font-weight: inherit;
+}
+
+b, strong {
+  font-weight: bolder;
+}
+
+code, kbd, samp {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+dfn {
+  font-style: italic;
+}
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+sup {
+  top: -.5em;
+}
+
+audio, video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+button, input {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: .35em .75em .625em;
+}
+
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type=checkbox], [type=radio] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details, menu {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: '';
+  clear: both;
+  height: 0;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+html {
+  font-size: 62.5%;
+  /* 10px */
+}
+
+body {
+  font-size: 2rem;
+  position: relative;
+  background-color: #5F3CBA;
+  color: #FCFCFC;
+  font-family: "Anonymous Pro", monospace;
+}
+
+/* STRIPPING STYLES */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hide {
+  display: none;
+}
+
+.startScreen {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#5F3CBA));
+  background-image: linear-gradient(#540187, #5F3CBA);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.startScreen .header {
+  font-family: "Sarpanch", sans-serif;
+  font-size: calc(70px + 280 * ( (100vw - 420px) / 1480));
+  color: #D31B65;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 420px) {
+  .startScreen .header {
+    font-size: 70px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .startScreen .header {
+    font-size: 350px;
+  }
+}
+
+.startScreen .startPrompt {
+  position: absolute;
+  font-size: 30px;
+  top: 50%;
+}
+
+.gameScreen {
+  height: 100vh;
+  background-color: #540187;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#B600A6));
+  background-image: linear-gradient(#540187, #B600A6);
+  padding-top: 30px;
+}
+
+.gameScreen .logo {
+  text-align: center;
+  text-transform: uppercase;
+  color: #FD7C20;
+  font-family: "Sarpanch", sans-serif;
+  letter-spacing: 10px;
+  font-size: 4rem;
+  text-shadow: 2px 2px 0 #D31B65;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.gameScreen .pairCounter {
+  text-transform: capitalize;
+  text-align: end;
+  font-size: 2.5rem;
+  color: #50C2DA;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.gameScreen .gameBoard {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin: 20px auto 35px;
+}
+
+.gameScreen .card {
+  background-color: #232323;
+  min-height: 120px;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+  border-radius: 5px;
+  background-image: url(../assets/card-back.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.gameScreen .card.faceUp {
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+
+.gameScreen .card.hidden {
+  visibility: hidden;
+}
+
+.gameScreen .card:hover, .gameScreen .card:focus {
+  border: 2px solid #50C2DA;
+}
+
+.completeScreen {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  background-color: rgba(57, 108, 217, 0.3);
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(15%, rgba(57, 108, 217, 0.3)), to(rgba(84, 1, 135, 0.5)));
+  background-image: linear-gradient(to bottom right, rgba(57, 108, 217, 0.3) 15%, rgba(84, 1, 135, 0.5));
+  display: none;
+}
+
+.completeScreen .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.completeScreen h2 {
+  font-family: "Sarpanch", sans-serif;
+  font-size: 7.5rem;
+  letter-spacing: 2px;
+  color: #FCFCFC;
+  text-shadow: 3px 3px 0 #B600A6;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.completeScreen p {
+  margin: 20px 0;
+}
+
+.completeScreen button {
+  font-family: inherit;
+  text-transform: capitalize;
+  color: #FCFCFC;
+  background-color: #B600A6;
+  background-image: -webkit-gradient(linear, left top, right top, from(#B600A6), to(#D31B65));
+  background-image: linear-gradient(to right, #B600A6, #D31B65);
+  padding: 5px 40px;
+  border-radius: 20px;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.completeScreen button:hover, .completeScreen button:focus {
+  background-image: -webkit-gradient(linear, left top, right top, from(#e900d5), to(#e63b80));
+  background-image: linear-gradient(to right, #e900d5, #e63b80);
+}
+
+.footer {
+  background-color: #5F3CBA;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  -webkit-filter: drop-shadow(0 -1px 7px #232323);
+          filter: drop-shadow(0 -1px 7px #232323);
+  z-index: 20;
+}
+
+.footer .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: default;
+          flex-direction: default;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .buttonsContainer {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: default;
+          flex-direction: default;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  position: relative;
+}
+
+.footer .footerButton {
+  font-family: inherit;
+  text-transform: capitalize;
+  color: #FCFCFC;
+  background-color: #FD7C20;
+  background-image: -webkit-gradient(linear, left top, right top, from(#FD7C20), to(#D31B65));
+  background-image: linear-gradient(to right, #FD7C20, #D31B65);
+  padding: 5px 40px;
+  border-radius: 20px;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.footer .footerButton:hover, .footer .footerButton:focus {
+  background-image: -webkit-gradient(linear, left top, right top, from(#fd9a53), to(#e63b80));
+  background-image: linear-gradient(to right, #fd9a53, #e63b80);
+}
+
+.footer .infoBox {
+  display: none;
+  background-color: #540187;
+  color: #FCFCFC;
+  line-height: 1.5;
+  position: absolute;
+  bottom: 200%;
+  padding: 20px 30px;
+  min-width: 350px;
+  border: 2px solid #50C2DA;
+}
+
+.footer .infoBox .rules {
+  margin-bottom: 40px;
+}
+
+.footer .infoBox .credits {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.footer .infoBox .credits p {
+  margin: 5px 0;
+}
+
+.footer .infoBox .credits a {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.footer .infoBox .credits a:hover, .footer .infoBox .credits a:focus {
+  color: #50C2DA;
+}
+
+.footer .socialLinks ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: initial;
+      -ms-flex-pack: initial;
+          justify-content: initial;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+}
+
+.footer .socialLinks a {
+  padding: 10px;
+  background-color: #3CB87A;
+  margin: 10px;
+  border-radius: 50%;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}
+
+.footer .socialLinks a:hover, .footer .socialLinks a:focus {
+  background-color: #5dca94;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
