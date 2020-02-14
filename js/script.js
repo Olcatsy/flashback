@@ -268,9 +268,19 @@ app.restart = function() {
     })
 }
 
+
+// INFO: on click opens the information box
 app.infoButton = function() {
     $('#infoButton').on('click', function() {
         $('#infoBox').fadeToggle();
+    })
+}
+
+// OPEN FOOTER MENU: on mobile the footer is hidden. It slides up when user clicks on the hamburger button
+app.openFooterMenu = function() {
+    $('.openFooterButton').on('click', function() {
+        $('.footer').slideToggle();
+        console.log('click');
     })
 }
 
@@ -283,6 +293,7 @@ app.init = function() {
     app.flipCard();
     app.restart();
     app.infoButton();
+    app.openFooterMenu();
 }
 
 
