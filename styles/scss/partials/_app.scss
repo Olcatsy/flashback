@@ -82,10 +82,10 @@ button {
         width: 90%;
     }
 }
-/* large tablet */
-@media (max-width: 980px) {
+ /* large tablet */
+// @media (max-width: 980px) {
     
-}
+// }
 /* small tablet */
 @media (max-width: 768px) {
     .wrapper {
@@ -97,9 +97,9 @@ button {
     }
 }
 /* mobile */
-@media (max-width: 480px) {
+// @media (max-width: 480px) {
 
-}
+// }
 // END OF COMMON STYLES
 
 
@@ -135,9 +135,9 @@ button {
 }
 
 /* large tablet */
-@media (max-width: 980px) {
+// @media (max-width: 980px) {
 
-}
+// }
 /* small tablet */
 @media (max-width: 768px) {
     .startScreen {
@@ -149,9 +149,9 @@ button {
     }   
 }
 /* mobile */
-@media (max-width: 480px) {
+// @media (max-width: 480px) {
 
-}
+// }
 // END OF START SCREEN
 
 
@@ -312,6 +312,8 @@ button {
 }
 // END OF COMPLETE SCREEN
 
+
+
 // FOOTER
 .footer {
     background-color: $primary;
@@ -443,7 +445,7 @@ button {
     }
 }
 /* mobile */
-@media (max-width: 480px) {
+// @media (max-width: 480px) {
 
-}
+// }
 // END OF FOOTER
