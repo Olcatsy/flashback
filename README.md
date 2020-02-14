@@ -11,8 +11,8 @@ Best experienced on desktop or tablet
 
 ## Things to add: 
 
-...* timer
+-timer
 
-...* leaderboard
+-leaderboard
 
-...* improve accessibility
+-improve accessibility
