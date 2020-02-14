@@ -175,7 +175,9 @@ app.createBoard = function() {
     
     // loop through the array, create html elements for each card and append it to .gameBoard. The id property of the object is store in data attribute
     for (let i = 0; i < shuffledDeck.length; i++){
-        let cardTemplate = `<div class="card" data-pairId = '${shuffledDeck[i].id}' tabindex="0"></div>`;
+        // I use button element for cards so that the user can tab through and interact with it using keyboard
+        let cardTemplate = `
+        <button class="card" data-pairId = '${shuffledDeck[i].id}'></button>`;
         $('.gameBoard').append(cardTemplate);
     }
 }
@@ -217,8 +219,15 @@ app.compareSelectedCards = function() {
 // COMPLETE: fades in the complete screen when pair counter = 18 (the board is cleared)
 
 app.youAreComplete = function () {
-    if (app.pairCounter === 1) {
+    // TEST
+        // if(app.pairCounter === 1) {
+        //     $('.completeScreen').fadeIn();
+        //     $('.completeScreen .reset').focus();
+        // } 
+
+    if (app.pairCounter === 18) {
         $('.completeScreen').fadeIn();
+        $('.completeScreen .reset').focus();
     }
 }
 
@@ -259,9 +268,19 @@ app.restart = function() {
     })
 }
 
+
+// INFO: on click opens the information box
 app.infoButton = function() {
     $('#infoButton').on('click', function() {
         $('#infoBox').fadeToggle();
+    })
+}
+
+// OPEN FOOTER MENU: on mobile the footer is hidden. It slides up when user clicks on the hamburger button
+app.openFooterMenu = function() {
+    $('.openFooterButton').on('click', function() {
+        $('.footer').slideToggle();
+        console.log('click');
     })
 }
 
@@ -274,17 +293,8 @@ app.init = function() {
     app.flipCard();
     app.restart();
     app.infoButton();
+    app.openFooterMenu();
 }
-
-/*
-
--if the pair counter is equal to 18  display the winning screen.
-
--Reset Game button on the game screen, and Play Again button on the result screen both have an event listener, that will reload the page (location.reload()) on click
-
--The Rules button on the Start and Game screen will have an event listener that will open a box with the rules on click
-
-*/
 
 
 $(function() {

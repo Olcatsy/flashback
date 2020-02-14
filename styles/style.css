@@ -243,7 +243,9 @@ html {
 body {
   font-size: 2rem;
   position: relative;
-  background-color: #5F3CBA;
+  background-color: #540187;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#B600A6));
+  background-image: linear-gradient(#540187, #B600A6);
   color: #FCFCFC;
   font-family: "Anonymous Pro", monospace;
 }
@@ -293,6 +295,40 @@ button {
   display: none;
 }
 
+.openFooterButton {
+  display: none;
+  background-color: #50C2DA;
+  color: #540187;
+  font-size: 2.5rem;
+  padding: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 30;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+
+/* large tablet */
+/* small tablet */
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .openFooterButton {
+    display: block;
+  }
+}
+
+/* mobile */
 .startScreen {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#5F3CBA));
   background-image: linear-gradient(#540187, #5F3CBA);
@@ -336,17 +372,41 @@ button {
   }
 }
 
-.startScreen .startPrompt {
+.startScreen .startButton {
   position: absolute;
-  font-size: 30px;
-  top: 50%;
+  font-family: inherit;
+  color: #FCFCFC;
+  background: transparent;
+  padding: 100px;
+  font-size: calc(20px + 10 * ( (100vw - 420px) / 1480));
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
 }
 
+@media screen and (max-width: 420px) {
+  .startScreen .startButton {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .startScreen .startButton {
+    font-size: 30px;
+  }
+}
+
+/* large tablet */
+/* small tablet */
+@media (max-width: 768px) {
+  .startScreen .header {
+    position: relative;
+    bottom: 80px;
+  }
+}
+
+/* mobile */
 .gameScreen {
   height: 100vh;
-  background-color: #540187;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#540187), to(#B600A6));
-  background-image: linear-gradient(#540187, #B600A6);
   padding-top: 30px;
 }
 
@@ -391,6 +451,7 @@ button {
   background-image: url(../assets/card-back.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom left;
 }
 
 .gameScreen .card.faceUp {
@@ -407,13 +468,68 @@ button {
   border: 2px solid #50C2DA;
 }
 
+/* large tablet */
+@media (max-width: 980px) {
+  .gameScreen .pairCounter {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/* small tablet */
+@media (max-width: 768px) {
+  .gameScreen {
+    padding: 15px 0;
+    height: auto;
+  }
+  .gameScreen .logo {
+    text-align: start;
+  }
+  .gameScreen .pairCounter {
+    text-align: start;
+    margin-top: 5px;
+  }
+  .gameScreen .gameBoard {
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-rows: (1fr)[6];
+        grid-template-rows: repeat(6, 1fr);
+    margin-bottom: 0;
+  }
+  .gameScreen .card {
+    min-height: 95px;
+  }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  .gameScreen .logo {
+    font-size: 3rem;
+  }
+  .gameScreen .pairCounter {
+    font-size: 2rem;
+  }
+  .gameScreen .gameBoard {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: (1fr)[9];
+        grid-template-rows: repeat(9, 1fr);
+  }
+  .gameScreen .card {
+    min-height: 80px;
+  }
+  .gameScreen .faceUp {
+    background-size: 60%;
+  }
+}
+
 .completeScreen {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 30;
+  z-index: 40;
   background-color: rgba(57, 108, 217, 0.3);
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(15%, rgba(57, 108, 217, 0.3)), to(rgba(84, 1, 135, 0.5)));
   background-image: linear-gradient(to bottom right, rgba(57, 108, 217, 0.3) 15%, rgba(84, 1, 135, 0.5));
@@ -453,6 +569,8 @@ button {
 
 .completeScreen p {
   margin: 20px 0;
+  -webkit-filter: drop-shadow(3px 3px 2px #232323);
+          filter: drop-shadow(3px 3px 2px #232323);
 }
 
 .completeScreen button {
@@ -466,6 +584,7 @@ button {
   border-radius: 20px;
   -webkit-filter: drop-shadow(3px 3px 2px #232323);
           filter: drop-shadow(3px 3px 2px #232323);
+  text-shadow: 2px 2px 2px #232323;
 }
 
 .completeScreen button:hover, .completeScreen button:focus {
@@ -501,7 +620,7 @@ button {
 }
 
 .footer .buttonsContainer {
-  width: 30%;
+  width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -509,9 +628,8 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: default;
           flex-direction: default;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: initial;
       -ms-flex-align: initial;
           align-items: initial;
@@ -529,6 +647,7 @@ button {
   border-radius: 20px;
   -webkit-filter: drop-shadow(3px 3px 2px #232323);
           filter: drop-shadow(3px 3px 2px #232323);
+  text-shadow: 2px 2px 2px #232323;
 }
 
 .footer .footerButton:hover, .footer .footerButton:focus {
@@ -544,7 +663,7 @@ button {
   position: absolute;
   bottom: 200%;
   padding: 20px 30px;
-  min-width: 350px;
+  min-width: 420px;
   border: 2px solid #50C2DA;
 }
 
@@ -593,6 +712,7 @@ button {
   border-radius: 50%;
   -webkit-filter: drop-shadow(3px 3px 2px #232323);
           filter: drop-shadow(3px 3px 2px #232323);
+  text-shadow: 1px 1px 2px #232323;
 }
 
 .footer .socialLinks a:hover, .footer .socialLinks a:focus {
@@ -600,3 +720,57 @@ button {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
+/* large tablet */
+@media (max-width: 980px) {
+  .footer .buttonsContainer {
+    width: 50%;
+  }
+}
+
+/* small tablet */
+@media (max-width: 768px) {
+  .footer {
+    display: none;
+    padding: 20px 0;
+  }
+  .footer .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer .buttonsContainer {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .footer .footerButton {
+    padding: 10px 30px;
+  }
+  .footer .infoBox .rules {
+    font-size: 2.2rem;
+  }
+  .footer .infoBox .credits {
+    font-size: 1.9rem;
+  }
+  .footer .socialLinks {
+    width: 90%;
+  }
+  .footer .socialLinks ul {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+/* mobile */
