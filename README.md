@@ -16,3 +16,9 @@ Best experienced on desktop or tablet
 -leaderboard
 
 -improve accessibility
+
+-load SVG on page load
+
+-optimize iPhone performance
+
+-optimize responsiveness for very small screens
