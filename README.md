@@ -1,5 +1,6 @@
-#FLASHBACK
-##Juno Bootcamp 2020 Project 3 - MEMORY (HTML, SASS, jQuery)
+# FLASHBACK
+
+## Juno Bootcamp 2020 Project 3 - MEMORY (HTML, SASS, jQuery)
 
 A simple card matching game with synthwave vibes. [Play it here](https://olcatsy.github.io/OlgaFiliushkinaProjectThree/)
 
@@ -7,22 +8,22 @@ Best experienced on desktop or tablet
 
 
 
-##Things to add:
+## Things to add:
 
--timer
+- timer
 
--leaderboard
+- leaderboard
 
 
 
-#Improve
+# Improve
 
--accessibility
+- accessibility
 
--load SVG on page load
+- load SVG on page load
 
--optimize iPhone performance
+- optimize iPhone performance
 
--optimize responsiveness for very small screens
+- optimize responsiveness for very small screens
 
--bug: three cards get matched if the user clicks too fast
+- bug: three cards get matched if the user clicks too fast
