@@ -8,7 +8,7 @@ Best experienced on desktop or tablet
 
 
 
-## Things to add:
+### Things to add:
 
 - timer
 
@@ -16,7 +16,7 @@ Best experienced on desktop or tablet
 
 
 
-# Improve
+### Improve
 
 - accessibility
 
