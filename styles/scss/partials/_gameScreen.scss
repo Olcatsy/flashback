@@ -1,0 +1,112 @@
+// GAME SCREEN
+.gameScreen {
+    height: 100vh;
+    padding-top: 30px;
+
+    .logo {
+        text-align: center;
+        text-transform: uppercase;
+        color: $accent;
+        font-family: $headerFont;
+        letter-spacing: 10px;
+        font-size: 4rem;
+        text-shadow: 2px 2px 0 $secondary, $dropShadow;
+    }
+    .pairCounter {
+        text-transform: capitalize;
+        text-align: end;
+        font-size: 2.5rem;
+        color: $pairCounter;
+        text-shadow: $dropShadow;
+    }
+    .gameBoard {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 10px;
+        margin: 20px auto 35px;
+    }
+    .card {
+        background-color: $primaryBlack;
+        min-height: 120px;
+        box-shadow: $dropShadow;
+        border-radius: 5px;background-image: url(../assets/card-back.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom left;
+
+        &.faceUp {
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-position: center;
+        }
+
+        &.hidden {
+            visibility: hidden;
+        }
+
+        @include hover() {
+            border: 2px solid $pairCounter;
+        }
+    }
+}
+
+// NOTE: the mobile version doesn't scale down very well. I had a hard time figuring out how to layout the board, the cards are either too small or you have to scroll, neither of which are ideal. It works though 🤷‍♀️
+
+/* large tablet */
+@media (max-width: 980px) {
+    .gameScreen {
+
+        .pairCounter {
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+}
+/* small tablet */
+@media (max-width: 768px) {
+    .gameScreen {
+        padding: 15px 0;
+        height: auto;
+
+        .logo {
+            text-align: start;
+        }
+
+        .pairCounter {
+            text-align: start;
+            margin-top: 5px;
+        }
+        .gameBoard {
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            margin-bottom: 0;
+        }
+        .card {
+            min-height: 95px;
+        }
+    }
+}
+/* mobile */
+@media (max-width: 480px) {
+    .gameScreen {
+        
+        .logo {
+            font-size: 3rem;
+        }
+        .pairCounter {
+            font-size: 2rem;
+        }
+        .gameBoard {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(9, 1fr);
+        }
+        .card {
+            min-height: 80px;
+        }
+        .faceUp {
+            background-size: 60%;
+        }
+    }
+}
+// END OF GAME SCREEN

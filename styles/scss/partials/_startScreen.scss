@@ -1,0 +1,50 @@
+// START SCREEN
+.startScreen {
+    background-image: linear-gradient($bgGradientOne, $primary);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    @include flex(column, center, center);
+
+
+    .header {
+        font-family: $headerFont;
+        @include fluidType();
+        color: $secondary;
+        opacity: 0.5;
+        text-shadow: $dropShadow;
+    }
+    
+    .startButton {
+        position: absolute;
+        font-family: inherit;
+        color: $primaryWhite;
+        background: transparent;
+        padding: 100px;
+        @include fluidType(20px, 30px,);
+        text-shadow: $dropShadow;
+    }
+}
+
+/* large tablet */
+@media (max-width: 980px) {
+
+}
+/* small tablet */
+@media (max-width: 768px) {
+    .startScreen {
+
+        .header {
+            position: relative;
+            bottom: 80px;
+        }
+    }   
+}
+/* mobile */
+@media (max-width: 480px) {
+
+}
+// END OF START SCREEN

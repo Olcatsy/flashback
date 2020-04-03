@@ -1,0 +1,136 @@
+// FOOTER
+.footer {
+    background-color: $primary;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 7px $primaryBlack;
+    
+    z-index: 20;
+
+    .wrapper {
+        @include flex(default, space-between, center);
+    }
+
+    .buttonsContainer {
+        width: 40%;
+        @include flex(default, space-around);
+        position: relative;
+    }
+
+    .footerButton {
+        @include button($accent, $secondary);
+    }
+
+    .infoBox {
+        display: none;
+        background-color: $bgGradientOne;
+        color: $primaryWhite;
+        line-height: 1.5;
+        position: absolute;
+        bottom: 200%;
+        padding: 20px 30px;
+        min-width: 420px;
+        border: 2px solid $pairCounter;
+
+        .rules {
+            margin-bottom: 40px;
+        }
+
+        .credits {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+
+            p {
+                margin: 5px 0;
+            }
+
+            a {
+                font-weight: 600;
+                letter-spacing: 2px;
+
+                @include hover() {
+                    color: $pairCounter;
+                }
+            }
+
+        }
+    }
+
+    .socialLinks {
+        ul {
+            @include flex()
+        }
+
+        a {
+            padding: 10px;
+            background-color: $socialButtons;
+            margin: 10px;
+            border-radius: 50%;
+            text-shadow: 1px 1px 2px $primaryBlack;
+            box-shadow: $dropShadow;
+
+            @include hover() {
+                background-color: lighten($socialButtons, 10%);
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+/* large tablet */
+@media (max-width: 980px) {
+    .footer {
+
+        .buttonsContainer {
+            width: 50%;
+        }
+    }
+}
+/* small tablet */
+// the footer is hidden and slides up when user presses the hamburger icon
+@media (max-width: 768px) {
+
+    .footer {
+        // height: 0;
+        display: none;
+        padding: 20px 0;
+
+        .wrapper {
+            @include flex(column, center, center);
+        }
+
+        .buttonsContainer {
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        .footerButton {
+            padding: 10px 30px;
+        }
+
+        .infoBox {
+            .rules {
+                font-size: 2.2rem;
+            }
+            .credits {
+                font-size: 1.9rem;
+            }
+        }
+
+        .socialLinks {
+            width: 90%;
+
+            ul {
+                width: 100%;
+                justify-content: space-evenly;
+            }
+        }
+    }
+}
+/* mobile */
+@media (max-width: 480px) {
+
+}
+// END OF FOOTER

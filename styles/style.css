@@ -358,6 +358,7 @@ button {
   font-size: calc(70px + 280 * ( (100vw - 420px) / 1480));
   color: #D31B65;
   opacity: 0.5;
+  text-shadow: 2px 2px 2px #232323;
 }
 
 @media screen and (max-width: 420px) {

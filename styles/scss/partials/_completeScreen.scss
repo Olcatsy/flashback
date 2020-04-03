@@ -1,0 +1,38 @@
+// COMPLETE SCREEN
+.completeScreen {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 40;
+    background-color: $overlayGradientOne;
+    background-image: linear-gradient(to bottom right, $overlayGradientOne 15%, $overlayGradientTwo);
+    display: none;
+
+    .container {
+        @include flex(column, center, center);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    h2 {
+        font-family: $headerFont;
+        font-size: 7.5rem;
+        letter-spacing: 2px;
+        color: $primaryWhite;
+        text-shadow: 3px 3px 0 $bgGradientTwo, $dropShadow;
+    }
+
+    p {
+        margin: 20px 0;
+        text-shadow: $dropShadow;
+    }
+
+    button {
+        @include button($bgGradientTwo, $secondary);
+    }
+}
+// END OF COMPLETE SCREEN

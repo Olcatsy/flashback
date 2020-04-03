@@ -1,0 +1,107 @@
+html {
+    font-size: 62.5%; /* 10px */
+}
+
+body {
+    font-size: 2rem;
+    position: relative;
+    background-color: $bgGradientOne;
+    background-image: linear-gradient($bgGradientOne, $bgGradientTwo);
+    color: $primaryWhite;
+    font-family: $bodyFont;
+}
+
+
+/* STRIPPING STYLES */
+body, 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+// END OF STRIPPING STYLES
+
+
+
+// COMMON STYLES
+.wrapper {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+} 
+
+.hide {
+    display: none;
+}
+
+.openFooterButton {
+    display: none;
+
+    background-color: $pairCounter;
+    color: $bgGradientOne;
+    font-size: 2.5rem;
+    padding: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 30;
+    box-shadow: $dropShadow;
+}
+
+// small desktop
+@media (max-width: 1024px) {
+    .wrapper {
+        width: 90%;
+    }
+}
+/* large tablet */
+@media (max-width: 980px) {
+    
+}
+/* small tablet */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .openFooterButton{
+        display: block;
+    }
+}
+/* mobile */
+@media (max-width: 480px) {
+
+}
+// END OF COMMON STYLES
+
+
+
+
