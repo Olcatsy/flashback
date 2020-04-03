@@ -306,8 +306,8 @@ button {
   top: 15px;
   right: 20px;
   z-index: 30;
-  -webkit-filter: drop-shadow(3px 3px 2px #232323);
-          filter: drop-shadow(3px 3px 2px #232323);
+  -webkit-box-shadow: 2px 2px 2px #232323;
+          box-shadow: 2px 2px 2px #232323;
 }
 
 @media (max-width: 1024px) {
@@ -379,8 +379,7 @@ button {
   background: transparent;
   padding: 100px;
   font-size: calc(20px + 10 * ( (100vw - 420px) / 1480));
-  -webkit-filter: drop-shadow(3px 3px 2px #232323);
-          filter: drop-shadow(3px 3px 2px #232323);
+  text-shadow: 2px 2px 2px #232323;
 }
 
 @media screen and (max-width: 420px) {
@@ -417,9 +416,7 @@ button {
   font-family: "Sarpanch", sans-serif;
   letter-spacing: 10px;
   font-size: 4rem;
-  text-shadow: 2px 2px 0 #D31B65;
-  -webkit-filter: drop-shadow(3px 3px 2px #232323);
-          filter: drop-shadow(3px 3px 2px #232323);
+  text-shadow: 2px 2px 0 #D31B65, 2px 2px 2px #232323;
 }
 
 .gameScreen .pairCounter {
@@ -427,8 +424,7 @@ button {
   text-align: end;
   font-size: 2.5rem;
   color: #50C2DA;
-  -webkit-filter: drop-shadow(3px 3px 2px #232323);
-          filter: drop-shadow(3px 3px 2px #232323);
+  text-shadow: 2px 2px 2px #232323;
 }
 
 .gameScreen .gameBoard {
@@ -445,8 +441,8 @@ button {
 .gameScreen .card {
   background-color: #232323;
   min-height: 120px;
-  -webkit-filter: drop-shadow(3px 3px 2px #232323);
-          filter: drop-shadow(3px 3px 2px #232323);
+  -webkit-box-shadow: 2px 2px 2px #232323;
+          box-shadow: 2px 2px 2px #232323;
   border-radius: 5px;
   background-image: url(../assets/card-back.jpg);
   background-size: cover;
@@ -562,15 +558,12 @@ button {
   font-size: 7.5rem;
   letter-spacing: 2px;
   color: #FCFCFC;
-  text-shadow: 3px 3px 0 #B600A6;
-  -webkit-filter: drop-shadow(3px 3px 2px #232323);
-          filter: drop-shadow(3px 3px 2px #232323);
+  text-shadow: 3px 3px 0 #B600A6, 2px 2px 2px #232323;
 }
 
 .completeScreen p {
   margin: 20px 0;
-  -webkit-filter: drop-shadow(3px 3px 2px #232323);
-          filter: drop-shadow(3px 3px 2px #232323);
+  text-shadow: 2px 2px 2px #232323;
 }
 
 .completeScreen button {
@@ -582,9 +575,9 @@ button {
   background-image: linear-gradient(to right, #B600A6, #D31B65);
   padding: 5px 40px;
   border-radius: 20px;
-  -webkit-filter: drop-shadow(3px 3px 2px #232323);
-          filter: drop-shadow(3px 3px 2px #232323);
   text-shadow: 2px 2px 2px #232323;
+  -webkit-box-shadow: 2px 2px 2px #232323;
+          box-shadow: 2px 2px 2px #232323;
 }
 
 .completeScreen button:hover, .completeScreen button:focus {
@@ -598,8 +591,8 @@ button {
   left: 0;
   bottom: 0;
   width: 100%;
-  -webkit-filter: drop-shadow(0 -1px 7px #232323);
-          filter: drop-shadow(0 -1px 7px #232323);
+  -webkit-box-shadow: 0 -1px 7px #232323;
+          box-shadow: 0 -1px 7px #232323;
   z-index: 20;
 }
 
@@ -645,9 +638,9 @@ button {
   background-image: linear-gradient(to right, #FD7C20, #D31B65);
   padding: 5px 40px;
   border-radius: 20px;
-  -webkit-filter: drop-shadow(3px 3px 2px #232323);
-          filter: drop-shadow(3px 3px 2px #232323);
   text-shadow: 2px 2px 2px #232323;
+  -webkit-box-shadow: 2px 2px 2px #232323;
+          box-shadow: 2px 2px 2px #232323;
 }
 
 .footer .footerButton:hover, .footer .footerButton:focus {
@@ -710,9 +703,9 @@ button {
   background-color: #3CB87A;
   margin: 10px;
   border-radius: 50%;
-  -webkit-filter: drop-shadow(3px 3px 2px #232323);
-          filter: drop-shadow(3px 3px 2px #232323);
   text-shadow: 1px 1px 2px #232323;
+  -webkit-box-shadow: 2px 2px 2px #232323;
+          box-shadow: 2px 2px 2px #232323;
 }
 
 .footer .socialLinks a:hover, .footer .socialLinks a:focus {

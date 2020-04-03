@@ -73,7 +73,7 @@ button {
     top: 15px;
     right: 20px;
     z-index: 30;
-    filter: $dropShadow;
+    box-shadow: $dropShadow;
 }
 
 // small desktop
@@ -130,7 +130,7 @@ button {
         background: transparent;
         padding: 100px;
         @include fluidType(20px, 30px,);
-        filter: $dropShadow;
+        text-shadow: $dropShadow;
     }
 }
 
@@ -168,15 +168,14 @@ button {
         font-family: $headerFont;
         letter-spacing: 10px;
         font-size: 4rem;
-        text-shadow: 2px 2px 0 $secondary;
-        filter: $dropShadow;
+        text-shadow: 2px 2px 0 $secondary, $dropShadow;
     }
     .pairCounter {
         text-transform: capitalize;
         text-align: end;
         font-size: 2.5rem;
         color: $pairCounter;
-        filter: $dropShadow;
+        text-shadow: $dropShadow;
     }
     .gameBoard {
         display: grid;
@@ -188,7 +187,7 @@ button {
     .card {
         background-color: $primaryBlack;
         min-height: 120px;
-        filter: $dropShadow;
+        box-shadow: $dropShadow;
         border-radius: 5px;background-image: url(../assets/card-back.jpg);
         background-size: cover;
         background-repeat: no-repeat;
@@ -297,13 +296,12 @@ button {
         font-size: 7.5rem;
         letter-spacing: 2px;
         color: $primaryWhite;
-        text-shadow: 3px 3px 0 $bgGradientTwo;
-        filter: $dropShadow;
+        text-shadow: 3px 3px 0 $bgGradientTwo, $dropShadow;
     }
 
     p {
         margin: 20px 0;
-        filter: $dropShadow;
+        text-shadow: $dropShadow;
     }
 
     button {
@@ -319,7 +317,8 @@ button {
     left: 0;
     bottom: 0;
     width: 100%;
-    filter: drop-shadow(0 -1px 7px $primaryBlack);
+    box-shadow: 0 -1px 7px $primaryBlack;
+    
     z-index: 20;
 
     .wrapper {
@@ -381,8 +380,8 @@ button {
             background-color: $socialButtons;
             margin: 10px;
             border-radius: 50%;
-            filter: $dropShadow;
             text-shadow: 1px 1px 2px $primaryBlack;
+            box-shadow: $dropShadow;
 
             @include hover() {
                 background-color: lighten($socialButtons, 10%);
