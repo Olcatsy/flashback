@@ -220,15 +220,15 @@ app.compareSelectedCards = function() {
 
 app.youAreComplete = function () {
     // TEST
-        if(app.pairCounter === 1) {
-            $('.completeScreen').fadeIn();
-            $('.completeScreen .reset').focus();
-        } 
+        // if(app.pairCounter === 1) {
+        //     $('.completeScreen').fadeIn();
+        //     $('.completeScreen .reset').focus();
+        // } 
 
-    // if (app.pairCounter === 18) {
-    //     $('.completeScreen').fadeIn();
-    //     $('.completeScreen .reset').focus();
-    // }
+    if (app.pairCounter === 18) {
+        $('.completeScreen').fadeIn();
+        $('.completeScreen .reset').focus();
+    }
 }
 
 
