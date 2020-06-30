@@ -20,9 +20,9 @@ Best experienced on desktop or tablet
 
 - accessibility
 
-- load SVG on page load
+- <del> load SVG on page load <del>
 
-- optimize iPhone performance
+- <del> optimize iPhone performance <del>
 
 - optimize responsiveness for very small screens
 
