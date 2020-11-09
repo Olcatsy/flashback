@@ -2,7 +2,7 @@
 
 ## Juno Bootcamp 2020 Project 3 (HTML, SASS, jQuery)
 
-A simple card matching game with synthwave vibes. [Play it here](https://olcatsy.github.io/OlgaFiliushkinaProjectThree/)
+A simple card matching game with synthwave vibes. [Play it here](https://olcatsy.github.io/flashback/)
 
 Best experienced on desktop or tablet
 
